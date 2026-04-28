@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>関係人口創出部 28期計画 素案</title>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --bg-accent: #efe5d3;
+      --paper: rgba(255, 252, 247, 0.92);
+      --paper-strong: #fffdf8;
+      --text: #1e2430;
+      --muted: #5d6776;
+      --line: rgba(72, 79, 90, 0.18);
+      --line-strong: rgba(72, 79, 90, 0.28);
+      --brand: #0d5c63;
+      --brand-soft: #d8ece8;
+      --accent: #bd632f;
+      --accent-soft: #f7e1d4;
+      --shadow: 0 18px 48px rgba(45, 44, 40, 0.10);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --max: 1280px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", "BIZ UDPGothic", "Noto Sans JP", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(13, 92, 99, 0.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(189, 99, 47, 0.10), transparent 28%),
+        linear-gradient(180deg, #f8f2e8 0%, #f3ecdf 42%, #f0e7d8 100%);
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.82), transparent 28%),
+        linear-gradient(135deg, rgba(7, 54, 60, 0.96), rgba(13, 92, 99, 0.88) 44%, rgba(189, 99, 47, 0.78) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      box-shadow: 0 28px 70px rgba(18, 30, 35, 0.24);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -60px -90px auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 66%);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 85%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 14px;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.72);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff8f2;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      letter-spacing: -0.03em;
+      max-width: 12ch;
+      color: #fffdf8;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lead {
+      margin: 16px 0 0;
+      max-width: 64ch;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.03rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .meta-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      backdrop-filter: blur(12px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta-card dt {
+      margin: 0 0 8px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.86rem;
+    }
+
+    .meta-card dd {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fffdf8;
+    }
+
+    .hero-strip {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-metric {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-metric strong {
+      display: block;
+      margin-top: 6px;
+      font-size: 1.45rem;
+      line-height: 1.15;
+      color: #fffdf8;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-metric span {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px;
+      background: rgba(255, 252, 247, 0.78);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 20px 18px;
+    }
+
+    .toc h2 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .toc ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: var(--text);
+      background: transparent;
+      transition: background-color 160ms ease, transform 160ms ease;
+    }
+
+    .toc a:hover {
+      background: rgba(13, 92, 99, 0.08);
+      transform: translateX(2px);
+      text-decoration: none;
+    }
+
+    main {
+      display: grid;
+      gap: 20px;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.84);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      backdrop-filter: blur(8px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand), rgba(189, 99, 47, 0.8));
+    }
+
+    section > p:first-of-type {
+      margin-top: 16px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--brand);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.55rem, 2vw, 2rem);
+      letter-spacing: -0.02em;
+    }
+
+    .badge-row,
+    .pillars,
+    .summary-grid,
+    .card-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .summary-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pillars {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 20px;
+    }
+
+    .card,
+    .pillar-card,
+    .note,
+    .pre-card {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--paper-strong);
+      padding: 18px;
+    }
+
+    .card h3,
+    .pillar-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .impact-band {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .impact-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(13, 92, 99, 0.08), rgba(255, 255, 255, 0.96));
+      border: 1px solid rgba(13, 92, 99, 0.14);
+      box-shadow: 0 10px 24px rgba(45, 44, 40, 0.06);
+    }
+
+    .impact-card .label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .impact-card .value {
+      display: block;
+      margin-top: 8px;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .impact-card .sub {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .pillar-card {
+      background:
+        linear-gradient(180deg, rgba(13, 92, 99, 0.08), rgba(255, 255, 255, 0.95));
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card strong {
+      color: var(--brand);
+    }
+
+    .pillar-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -28px -28px auto;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(13, 92, 99, 0.10), transparent 70%);
+    }
+
+    .pillar-no {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+      background: rgba(13, 92, 99, 0.10);
+      color: var(--brand);
+      font-weight: 800;
+    }
+
+    .note {
+      background: linear-gradient(180deg, rgba(247, 225, 212, 0.55), rgba(255, 253, 248, 0.96));
+      border-color: rgba(189, 99, 47, 0.26);
+    }
+
+    .note strong {
+      color: #8d4318;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      font-size: 0.96rem;
+      background: rgba(255, 255, 255, 0.62);
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    th, td {
+      padding: 14px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: rgba(13, 92, 99, 0.08);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    ul, ol {
+      padding-left: 1.25rem;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .quote-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      background: rgba(247, 225, 212, 0.42);
+      border-radius: 0 14px 14px 0;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #1d3941;
+    }
+
+    .pre-card {
+      background: linear-gradient(180deg, rgba(216, 236, 232, 0.60), rgba(255, 255, 255, 0.95));
+    }
+
+    .flow-diagram {
+      margin-top: 18px;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(216, 236, 232, 0.52), rgba(255, 255, 255, 0.96));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flow-diagram::before {
+      content: "";
+      position: absolute;
+      inset: 14% 31% 14% 31%;
+      border-radius: 36px;
+      background: radial-gradient(circle, rgba(13, 92, 99, 0.09), transparent 72%);
+      pointer-events: none;
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) 48px minmax(0, 1fr) 48px minmax(0, 1.25fr) 48px minmax(0, 1fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .flow-node,
+    .flow-arrow {
+      border-radius: 16px;
+    }
+
+    .flow-node {
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(72, 79, 90, 0.16);
+      box-shadow: 0 10px 24px rgba(45, 44, 40, 0.06);
+      min-width: 0;
+    }
+
+    .flow-node h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .flow-node ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .flow-node li {
+      margin-top: 6px;
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--brand);
+      font-weight: 700;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      position: relative;
+    }
+
+    .flow-arrow span::after {
+      content: "→";
+      display: block;
+      margin-top: 8px;
+      font-size: 1.7rem;
+    }
+
+    .flow-node.core {
+      background:
+        linear-gradient(180deg, rgba(13, 92, 99, 0.08), rgba(255, 255, 255, 0.96));
+      border-color: rgba(13, 92, 99, 0.24);
+    }
+
+    .flow-node.support {
+      margin-top: 14px;
+      background:
+        linear-gradient(180deg, rgba(247, 225, 212, 0.56), rgba(255, 255, 255, 0.96));
+      border-color: rgba(189, 99, 47, 0.26);
+    }
+
+    .flow-caption {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .flow-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .flow-summary .mini {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(72, 79, 90, 0.12);
+      font-size: 0.92rem;
+    }
+
+    .pillar-section {
+      margin-bottom: 18px;
+      padding: 22px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.98));
+      border: 1px solid rgba(72, 79, 90, 0.10);
+    }
+
+    .pillar-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+    }
+
+    .pillar-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .pillar-chip {
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .financial {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .footer {
+      margin-top: 20px;
+      padding: 22px 26px;
+      border-radius: var(--radius-lg);
+      background: rgba(30, 36, 48, 0.92);
+      color: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow);
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 1080px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+
+      .flow-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-arrow span::after {
+        content: "↓";
+      }
+    }
+
+    @media (max-width: 820px) {
+      .meta-grid,
+      .summary-grid,
+      .card-grid,
+      .pillars,
+      .impact-band,
+      .hero-strip,
+      .flow-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .hero,
+      section {
+        padding: 24px;
+      }
+
+      .shell {
+        width: min(calc(100% - 20px), var(--max));
+        padding-top: 20px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .flow-diagram {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div class="eyebrow">
+        <span class="status">Draft</span>
+        <span>副部長（小林）ディスカッション用</span>
+      </div>
+      <h1>関係人口創出部 28期計画 素案</h1>
+      <p class="lead">
+          27期の基盤構築を踏まえ、28期を「収益源の確立とスケール準備」の年として整理した計画書です。
+          原稿の情報を落とさず、戦略の全体像、2本柱、財務、体制、論点、月次アクションまで一望できる Web ページとして再構成しています。
+      </p>
+      <div class="hero-strip">
+        <div class="hero-metric">
+          <span>28期売上目標</span>
+          <strong>160,000千円</strong>
+        </div>
+        <div class="hero-metric">
+          <span>営業利益目標</span>
+          <strong>8,000千円</strong>
+        </div>
+        <div class="hero-metric">
+          <span>制度普及の波</span>
+          <strong>1,200自治体</strong>
+        </div>
+        <div class="hero-metric">
+          <span>協力隊需要</span>
+          <strong>10,000人目標</strong>
+        </div>
+      </div>
+      <dl class="meta-grid">
+        <div class="meta-card">
+          <dt>ステータス</dt>
+          <dd>draft</dd>
+        </div>
+        <div class="meta-card">
+          <dt>作成日</dt>
+          <dd>2026年4月21日</dd>
+        </div>
+        <div class="meta-card">
+          <dt>最終更新</dt>
+          <dd>2026年4月23日<br>（4/22ディスカッション反映）</dd>
+        </div>
+        <div class="meta-card">
+          <dt>対象期間</dt>
+          <dd>28期<br>2026年9月〜2027年8月</dd>
+        </div>
+      </dl>
+    </header>
+
+    <div class="layout">
+      <aside class="toc" aria-label="目次">
+        <h2>目次</h2>
+        <ol>
+          <li><a href="#overview">計画の要旨</a></li>
+          <li><a href="#section-0">0. 前提</a></li>
+          <li><a href="#section-1">1. 外部環境</a></li>
+          <li><a href="#section-2">2. 戦略テーマと2本柱</a></li>
+          <li><a href="#section-25">2.5 事業構想図</a></li>
+          <li><a href="#section-3">3. 各柱の戦略と打ち手</a></li>
+          <li><a href="#section-4">4. 財務サマリー</a></li>
+          <li><a href="#section-5">5. 組織・体制</a></li>
+          <li><a href="#section-6">6. ディスカッション論点</a></li>
+          <li><a href="#appendix">付記：月次アクション</a></li>
+        </ol>
+      </aside>
+
+      <main>
+        <section id="overview">
+          <span class="section-kicker">Overview</span>
+          <div class="section-title">
+            <h2>計画の要旨</h2>
+          </div>
+          <div class="impact-band">
+            <div class="impact-card">
+              <span class="label">市場タイミング</span>
+              <span class="value">先行確保の年</span>
+              <span class="sub">競合整備前に制度対応ポジションを押さえる</span>
+            </div>
+            <div class="impact-card">
+              <span class="label">中心テーマ</span>
+              <span class="value">収益源の確立</span>
+              <span class="sub">27期の種を28期で収益の型へ転換</span>
+            </div>
+            <div class="impact-card">
+              <span class="label">中核商品</span>
+              <span class="value">AI + 地域DB</span>
+              <span class="sub">制度対応の不可欠インフラを狙う</span>
+            </div>
+            <div class="impact-card">
+              <span class="label">収益設計</span>
+              <span class="value">MRR + 都度課金</span>
+              <span class="sub">ストックとフローの両輪で拡張</span>
+            </div>
+          </div>
+          <div class="summary-grid">
+            <div class="card">
+              <h3>28期の基本認識</h3>
+              <p>
+                28期は「待てば仕事が来る」年ではなく、制度・予算・人材需要が動き始める前後で先行ポジションを押さえる年と定義されています。
+                特に、ふるさと住民登録制度、地域おこし協力隊拡大、地域未来交付金の活用が追い風です。
+              </p>
+            </div>
+            <div class="card">
+              <h3>戦略テーマ</h3>
+              <p>
+                テーマは <strong>「収益源の確立とスケール準備」</strong>。
+                27期で蒔いた種を、横展開できる収益事業の「型」へ変換することが中心課題です。
+              </p>
+            </div>
+            <div class="card">
+              <h3>中核スケールポイント</h3>
+              <p>
+                4月22日のディスカッション反映により、
+                <strong>ふるさと住民コーディネーター支援AIエージェント＋地域アセットDB</strong>
+                が事業中核に据えられました。
+              </p>
+            </div>
+            <div class="card financial">
+              <h3>財務目標</h3>
+              <p>
+                28期売上高目標は <strong>160,000千円</strong>、営業利益は <strong>8,000千円</strong>、
+                営業利益率は <strong>5.0%</strong> を目標としています。
+              </p>
+            </div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">制度対応ソリューション</span>
+            <span class="tag">BtoB産学官連携</span>
+            <span class="tag">チイキャン拡大</span>
+            <span class="tag">AIエージェント基盤活用</span>
+          </div>
+        </section>
+
+        <section id="section-0">
+          <span class="section-kicker">Section 0</span>
+          <div class="section-title">
+            <h2>前提：27期の着地と引き継ぎ事項</h2>
+          </div>
+          <p>
+            27期（2026年8月期）は、基盤構築の成果を積み上げた一方で、一部主要KPI・事業は未達見込みで着地します。「基盤構築期」の成果と反省の両方を引き継いだ状態で28期へ入る前提です。
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>引き継ぎ事項</th>
+                <th>27期末の状態</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nativ.media MRR</td>
+                <td>700千円程度で着地見込み（目標未達）</td>
+              </tr>
+              <tr>
+                <td>まちスパチャ</td>
+                <td>未達見込み</td>
+              </tr>
+              <tr>
+                <td>まいぷれのご当地ギフト</td>
+                <td>未達見込み</td>
+              </tr>
+              <tr>
+                <td>チイキャン</td>
+                <td>受注1件、来年度予算化案件を5件</td>
+              </tr>
+              <tr>
+                <td>ふるさと住民登録制度</td>
+                <td>2027年3月にアプリリリース予定、鳴門市・飛騨市と関係構築済み</td>
+              </tr>
+              <tr>
+                <td>AIエージェント基盤</td>
+                <td>チーム全員に展開済み</td>
+              </tr>
+              <tr>
+                <td>BtoB産学官連携</td>
+                <td>ドワンゴ学園・日本郵政・東大阪商工会議所と初件実績あり</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="section-1">
+          <span class="section-kicker">Section 1</span>
+          <div class="section-title">
+            <h2>外部環境：28期は「爆発的普及期」の入り口</h2>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>要因</th>
+                <th>内容</th>
+                <th>FLNへの意味</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ふるさと住民登録制度の本格始動</strong></td>
+                <td>2026年冬アプリリリース後、自治体導入が本格化</td>
+                <td>「制度対応ソリューション」の提案が最も刺さるタイミング</td>
+              </tr>
+              <tr>
+                <td><strong>政府目標：1,200自治体が関係人口創出に着手</strong></td>
+                <td>2027年の「爆発的普及期」が到来</td>
+                <td>市場そのものが急拡大するフェーズ</td>
+              </tr>
+              <tr>
+                <td><strong>地域おこし協力隊10,000人目標</strong></td>
+                <td>総務省がR8年度比+2,000人増を目標</td>
+                <td>Nativ.media連動の協力隊募集・チイキャン需要が爆発</td>
+              </tr>
+              <tr>
+                <td><strong>地域未来交付金の本格活用フェーズ</strong></td>
+                <td>モデル事業の成果を元に自治体が申請開始</td>
+                <td>受注額・単価の引き上げに直結する予算原資</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="note" style="margin-top: 18px;">
+            <strong>結論</strong>
+            <p>
+              28期は「待てば仕事が来る」タイミングではなく、競合が整備される前に先行してポジションを取りに行く年です。
+            </p>
+          </div>
+        </section>
+
+        <section id="section-2">
+          <span class="section-kicker">Section 2</span>
+          <div class="section-title">
+            <h2>戦略テーマと2本柱</h2>
+          </div>
+          <p>
+            28期テーマは <strong>「収益源の確立とスケール準備」</strong>。
+            27期の実証・産学官連携立ち上げ・チイキャン初年度実績を、横展開可能な収益事業の「型」へ転換します。
+          </p>
+            <div class="pillars">
+              <div class="pillar-card">
+                <div class="pillar-no">01</div>
+                <p><strong>BtoB産学官連携事業のスケール</strong></p>
+                <p>高単価・高粗利で売上を引き上げる柱。</p>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-no">02</div>
+                <p><strong>制度対応＋人材募集・育成システム</strong></p>
+                <p>1,200自治体の波に乗り、地域の自走体制をつくる柱。</p>
+              </div>
+            </div>
+          <div class="pre-card" style="margin-top: 18px;">
+            <pre>【2本柱】
+
+柱① BtoB産学官連携事業のスケール        ← 高単価・高粗利で売上を引き上げる
+柱② 制度対応＋人材募集・育成システム      ← 1,200自治体の波に乗り、地域の自走体制をつくる</pre>
+          </div>
+        </section>
+
+        <section id="section-25">
+          <span class="section-kicker">Section 2.5</span>
+          <div class="section-title">
+            <h2>事業構想図（4/22ディスカッション反映）</h2>
+          </div>
+          <p>
+            4月22日の小林副部長とのディスカッションで、
+            <strong>ふるさと住民コーディネーター支援AIエージェント＋地域アセットDB</strong>
+            を中核スケールポイントに据える方針が確認され、2本柱はこの中核プロダクトを軸に再配置されました。
+          </p>
+
+          <div class="flow-diagram" aria-label="事業構想図">
+            <div class="flow-grid">
+              <div class="flow-node">
+                <h3>都市圏へのリーチ手段</h3>
+                <ul>
+                  <li>Nativ.media</li>
+                  <li>SmartNews / グノシー配信</li>
+                  <li>POSTUDIO（日本郵政）</li>
+                  <li>郵便局拠点起点の都市圏社員への発信</li>
+                </ul>
+              </div>
+              <div class="flow-arrow"><span>情報発信<br>送客</span></div>
+              <div class="flow-node">
+                <h3>人材プール</h3>
+                <ul>
+                  <li>ZEN大学 / N高</li>
+                  <li>おてつたび</li>
+                  <li>JOIN</li>
+                  <li>大企業社員</li>
+                  <li>Nativ.media toCメルマガ会員</li>
+                </ul>
+              </div>
+              <div class="flow-arrow"><span>登録<br>接続</span></div>
+              <div class="flow-node core">
+                <h3>中核プロダクト</h3>
+                <ul>
+                  <li>地域アセットDB</li>
+                  <li>AIエージェント</li>
+                  <li>外部アライアンス先DB / 自社人材プールDB</li>
+                  <li>収益モデル：月額MRR + 機能別都度課金</li>
+                </ul>
+              </div>
+              <div class="flow-arrow"><span>提案<br>実装</span></div>
+              <div class="flow-node">
+                <h3>需要側：地域</h3>
+                <ul>
+                  <li>地方中核企業</li>
+                  <li>まちづくり企業</li>
+                  <li>自治体</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flow-summary">
+              <div class="mini"><strong>入口</strong><br>都市圏への情報発信と送客で母集団をつくる</div>
+              <div class="mini"><strong>変換</strong><br>AIエージェントと地域アセットDBで人材・地域・業務を接続する</div>
+              <div class="mini"><strong>出口</strong><br>自治体・地域企業の制度対応、育成、採用、実装案件へつなぐ</div>
+            </div>
+            <div class="flow-node support">
+              <h3>需要側を支える地域アセット</h3>
+              <ul>
+                <li>郵便局（拠点）：地域DXと人材育成の現場基盤</li>
+                <li>まいぷれ（人）：地域アセットDBの情報源・更新者</li>
+              </ul>
+              <p class="flow-caption">
+                地域アセットは、中核プロダクトに地域情報と運用基盤を供給しながら、需要側での実装・定着も支える位置づけです。
+              </p>
+            </div>
+          </div>
+
+          <div class="card-grid" style="margin-top: 18px;">
+            <div class="card">
+              <h3>① 都市圏へのリーチ手段</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>手段</th>
+                    <th>役割</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Nativ.media</td>
+                    <td>自治体・地域側の情報発信媒体。<strong>SmartNews・グノシー</strong>への配信により都市圏リーチを確保</td>
+                  </tr>
+                  <tr>
+                    <td>POSTUDIO（日本郵政）</td>
+                    <td>Nativ.mediaと同等の位置づけで、郵便局の拠点網を起点に都市圏社員・生活者へのリーチ手段として活用</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="margin-top: 14px;">
+                ※Nativ.media単体でのMRR倍増は困難と判断。今後は「自治体情報の発信媒体＋都市圏リーチ手段」として再定義し、価値の源泉はAIエージェント側へ移す。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>② 人材プール</h3>
+              <p>都市圏から地域への人材送り出しを担う供給源です。外部アライアンス先と自社人材プールを分けて構築します。</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>パートナー</th>
+                    <th>特性</th>
+                    <th>母数</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ZEN大学 / N高</td>
+                    <td>若手人材のインターン・協力隊予備軍</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>おてつたび</td>
+                    <td>短期就労・滞在型で地域とつながる多世代人材プール</td>
+                    <td>約97,000名</td>
+                  </tr>
+                  <tr>
+                    <td>JOIN</td>
+                    <td>地域おこし協力隊募集の主要チャネル</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>大企業社員</td>
+                    <td>登録・参画。日本郵政ほか連携企業の社員が地域DXに関与</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h4 style="margin-top: 16px;">自社人材プール</h4>
+              <table>
+                <thead>
+                  <tr>
+                    <th>人材プール</th>
+                    <th>特性</th>
+                    <th>母数</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Nativ.media toCメルマガ会員</td>
+                    <td>自社で直接リーチ・育成・送客できる読者基盤</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="card">
+              <h3>③ 中核プロダクト</h3>
+              <p><strong>AIエージェント＋地域アセットDB</strong></p>
+              <ul>
+                <li>既存のふるさと住民登録システムに欠けている「地域アセット（体験プログラム・拠点・ヌシ等）のDB」をまいぷれ側で構築</li>
+                <li>ふるさと住民コーディネーターの役割をAIエージェントが支援</li>
+                <li>モデル事業採択自治体に「不可欠なインフラ」として入り込むことを現実的ロードマップとする</li>
+              </ul>
+              <h4 style="margin-top: 16px;">収益モデル</h4>
+              <ul>
+                <li><strong>ストック</strong>：○円/月（月額MRR）</li>
+                <li><strong>フロー</strong>：機能別都度課金 × 4メニュー</li>
+                <li>企画（○/回）</li>
+                <li>業務（○/回）</li>
+                <li>育成（○/回）</li>
+                <li>採用（○/回）</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>④ 需要側を支える地域アセット</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>アセット</th>
+                    <th>役割</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>郵便局（拠点）</td>
+                    <td>地域DXと人材育成の現場拠点。都市圏人材が協力隊・複業として関与する物理的な基盤</td>
+                  </tr>
+                  <tr>
+                    <td>まいぷれ（人）</td>
+                    <td>地域に根ざした編集・営業・情報収集のリアルな「人」のネットワーク。地域アセットDBの情報源・更新者となる</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h4 style="margin-top: 16px;">⑤ 需要側（顧客）</h4>
+              <ul>
+                <li>地方中核企業（地方豪族企業）</li>
+                <li>まちづくり企業（toBtoG）</li>
+                <li>自治体（モデル事業採択自治体を先陣に全国展開）</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 22px;">この構想が2本柱に与える影響</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>柱</th>
+                <th>構想反映後の位置づけ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>柱① BtoB産学官連携</td>
+                <td>「関係人口をテーマにした広告代理店」的役割。アライアンス×現場実行で展開</td>
+              </tr>
+              <tr>
+                <td>柱② 制度対応＋人材募集・育成システム</td>
+                <td>地域コーディネーター（ふるさと住民コーディネーター／地域おこし協力隊）予算の獲得にフォーカスしつつ、地域の自走体制をつくるための人材募集・育成システムを一体で提供。AIエージェント＋地域DBを制度対応の中核商品として提供</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="section-3">
+          <span class="section-kicker">Section 3</span>
+          <div class="section-title">
+            <h2>各柱の戦略と打ち手</h2>
+          </div>
+
+          <div class="pillar-section">
+            <div class="pillar-header">
+              <span class="pillar-chip">柱①</span>
+              <h3>BtoB産学官連携事業のスケール</h3>
+            </div>
+            <p><strong>仮説</strong><br>ホンネサロン起点の産学官連携モデルは、採用・研修予算を持つ地方中核企業・都市部大企業への高単価提案で最も粗利が取れる。27期の初件実績をケーススタディ化し、28期は「型」による横展開で件数を積む。</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>セグメント</th>
+                  <th>ターゲット条件</th>
+                  <th>主なチャネル</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>地方中核企業（地方豪族）</td>
+                  <td>採用・研修予算年500万円以上。経営者が発信したい</td>
+                  <td>三重CP・東大阪商工会議所経由の紹介</td>
+                </tr>
+                <tr>
+                  <td>都市部大企業</td>
+                  <td>地方創生・CSR・ESGで地域関与を検討中</td>
+                  <td>日本郵政・三井住友・コクヨ等の既存接点</td>
+                </tr>
+                <tr>
+                  <td>教育機関連携</td>
+                  <td>ZEN大学・N高・暁学園との連携パッケージ</td>
+                  <td>既存アライアンスの深化</td>
+                </tr>
+              </tbody>
+            </table>
+            <h4 style="margin-top: 16px;">打ち手</h4>
+            <ol>
+              <li>27期実績のケーススタディ化と提案書の標準化（型の確立）</li>
+              <li>ZEN大学・N高との送客モデルの強化：都市部若手人材×地方企業のマッチングを付加価値化</li>
+              <li>大企業向けは「企業版ふるさと納税」スキームとのセット提案で単価を5,000千円→上位化</li>
+              <li>産学官連携の実績をPR化（プレスリリース・セミナー登壇）し、インバウンドリード獲得</li>
+            </ol>
+            <h4 style="margin-top: 16px;">目標（案）</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>指標</th>
+                  <th>28期目標</th>
+                  <th>備考</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>件数</td>
+                  <td>XX件</td>
+                  <td>← ディスカッション論点</td>
+                </tr>
+                <tr>
+                  <td>平均単価</td>
+                  <td>5,000千円〜</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>売上貢献</td>
+                  <td>XX千円</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>粗利率</td>
+                  <td>64%</td>
+                  <td>中期計画の30期目標値を前提</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pillar-section">
+            <div class="pillar-header">
+              <span class="pillar-chip">柱②</span>
+              <h3>制度対応＋人材募集・育成システムによる自治体案件獲得</h3>
+            </div>
+            <p><strong>仮説</strong><br>2026年冬のアプリリリース後「導入はしたが活用できていない」自治体が続出する。そこに「プレミアム登録者を増やすソリューション」と、地域の自走体制をつくる人材募集・育成システムを一体パッケージで提案することで、競合が整備される前にポジションを取れる。先行モデル事業選出27自治体が最優先の入口。</p>
+            <h4>ターゲット優先順位</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>優先度</th>
+                  <th>ターゲット</th>
+                  <th>アプローチ方針</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>最優先</td>
+                  <td>モデル事業選出27自治体（広域7都道府県・個別20市町村）</td>
+                  <td>個別アプローチ。制度連動の実績自治体として共同PR化</td>
+                </tr>
+                <tr>
+                  <td>優先</td>
+                  <td>27期実績自治体（鉾田市・新見市・飛騨市・鳴門市等）</td>
+                  <td>継続・拡張提案。クロスセルで単価引き上げ</td>
+                </tr>
+                <tr>
+                  <td>拡大</td>
+                  <td>制度対応を急ぐその他自治体</td>
+                  <td>Nativ.media・セミナーからのインバウンド</td>
+                </tr>
+              </tbody>
+            </table>
+            <h4 style="margin-top: 16px;">打ち手</h4>
+            <ol>
+              <li>「ふるさと住民登録制度対応パッケージ」の商品化
+                <br>Nativ.media（情報発信）＋チイキャン（人材）＋おてつたび（体験）のセット設計
+                <br>地域未来交付金を予算原資にした申請フォーマットの整備
+                <br>日本郵政との連携により、地域おこし協力隊を郵便局に配置し、郵便局を地域DXの拠点化。配置人材を地域コーディネーターとして育成
+                <br>将来的にはBtoB産学官連携において、地方中核企業へのチャネルとしても機能させる
+              </li>
+              <li>モデル事業選出27自治体への個別アプローチ（期初から集中着手）</li>
+              <li>地域の自走体制をつくる人材募集・育成システムの標準化
+                <br>協力隊募集（Nativ.media）：800千円
+                <br>チイキャン半日：80千円/人
+                <br>チイキャン3泊4日：640千円/人（伴走支援付き1,320千円/人）
+                <br>ながいしともき氏との連携による飛騨市モデル
+                <br>おてつたびとの連携によるおてつたびモデル
+              </li>
+              <li>関係人口戦略セミナーの継続：自治体担当者向けにリードを取り続ける</li>
+              <li>内閣府・総務省のモデル事業への採択申請（定性KPI）</li>
+              <li>修了生コミュニティ・eラーニング化の検討着手（規模拡大に向けた仕組み化）</li>
+            </ol>
+            <h4 style="margin-top: 16px;">目標（案）</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>指標</th>
+                  <th>27期末</th>
+                  <th>28期目標</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nativ.media MRR</td>
+                  <td>700千円程度</td>
+                  <td>3,000千円</td>
+                </tr>
+                <tr>
+                  <td>新規自治体獲得</td>
+                  <td>-</td>
+                  <td>XX件 ← ディスカッション論点</td>
+                </tr>
+                <tr>
+                  <td>対応自治体数</td>
+                  <td>5自治体</td>
+                  <td>XX自治体 ← ディスカッション論点</td>
+                </tr>
+                <tr>
+                  <td>協力隊募集案件</td>
+                  <td>-</td>
+                  <td>XX件（800千円/件）</td>
+                </tr>
+                <tr>
+                  <td>自治体向け案件単価</td>
+                  <td>-</td>
+                  <td>XX千円</td>
+                </tr>
+                <tr>
+                  <td>チイキャン参加者</td>
+                  <td>10名</td>
+                  <td>XX名</td>
+                </tr>
+                <tr>
+                  <td>人材募集・育成システム売上</td>
+                  <td>-</td>
+                  <td>XX千円</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="section-4">
+          <span class="section-kicker">Section 4</span>
+          <div class="section-title">
+            <h2>財務サマリー</h2>
+          </div>
+          <h3>全体目標</h3>
+          <table class="financial">
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th>27期着地（見込）</th>
+                <th>28期目標</th>
+                <th>YoY</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>売上高</td>
+                <td>90,000千円</td>
+                <td>160,000千円</td>
+                <td>+77.8%</td>
+              </tr>
+              <tr>
+                <td>売上総利益</td>
+                <td>51,000千円</td>
+                <td>95,000千円</td>
+                <td>+86.3%</td>
+              </tr>
+              <tr>
+                <td>売上総利益率</td>
+                <td>56.7%</td>
+                <td>59.4%</td>
+                <td>+2.7pt</td>
+              </tr>
+              <tr>
+                <td>人件費</td>
+                <td>28,000千円</td>
+                <td>49,000千円</td>
+                <td>+75.0%</td>
+              </tr>
+              <tr>
+                <td>労働分配率</td>
+                <td>55.0%</td>
+                <td>51.7%</td>
+                <td>△3.3pt</td>
+              </tr>
+              <tr>
+                <td>営業利益</td>
+                <td>0千円</td>
+                <td>8,000千円</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>営業利益率</td>
+                <td>0%</td>
+                <td>5.0%</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="margin-top: 20px;">事業別売上内訳（案）</h3>
+          <table class="financial">
+            <thead>
+              <tr>
+                <th>事業</th>
+                <th>27期着地</th>
+                <th>28期目標</th>
+                <th>粗利率</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nativ.media / Nativ.チャンネル</td>
+                <td>XX千円</td>
+                <td>36,000千円（MRR 3,000千円×12ヶ月）</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <td>BtoB産学官連携（マーケティング支援）</td>
+                <td>XX千円</td>
+                <td>XX千円</td>
+                <td>64%</td>
+              </tr>
+              <tr>
+                <td>チイキャン（地域コーディネーター育成）</td>
+                <td>XX千円</td>
+                <td>XX千円</td>
+                <td>75%</td>
+              </tr>
+              <tr>
+                <td>まいぷれのご当地ギフト</td>
+                <td>XX千円</td>
+                <td>XX千円</td>
+                <td>26%</td>
+              </tr>
+              <tr>
+                <td><strong>合計</strong></td>
+                <td><strong>90,000千円</strong></td>
+                <td><strong>160,000千円</strong></td>
+                <td><strong>59.4%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="section-5">
+          <span class="section-kicker">Section 5</span>
+          <div class="section-title">
+            <h2>組織・体制</h2>
+          </div>
+          <p>
+            28期は営業利益5%を確保しながら先行投資するフェーズです。人件費49,000千円の枠内で生産性を最大化する前提が置かれています。
+          </p>
+          <ul>
+            <li><strong>2本柱の担当配置</strong>：各柱に対して主担当を明確化（←体制はディスカッション論点）</li>
+            <li><strong>AIエージェント基盤の活用</strong>：提案書・PR・セミナー資料を型化し、1人あたり付加価値を引き上げる</li>
+            <li><strong>ながいしともき氏との協業体制</strong>：チイキャンの受け入れキャパシティの上限を事前に確認し、件数目標と整合させる</li>
+          </ul>
+        </section>
+
+        <section id="section-6">
+          <span class="section-kicker">Section 6</span>
+          <div class="section-title">
+            <h2>ディスカッション論点</h2>
+          </div>
+          <div class="quote-list">
+            <blockquote>
+              <strong>論点①：BtoB産学官連携の件数目標</strong><br>
+              27期の実績件数・商談状況を踏まえ、28期は何件・いくらを積めるか。大企業（日本郵政・三井住友等）の案件化までのリードタイムはどの程度見るべきか。
+            </blockquote>
+            <blockquote>
+              <strong>論点②：制度対応＋人材募集・育成システムの設計</strong><br>
+              Nativ.media・チイキャン・おてつたびをどう組み合わせて「制度対応＋人材募集・育成システム」のパッケージとするか。単価設計はどうするか（地域未来交付金の額面を踏まえた現実的な金額は？）。ながいしともき氏のキャパシティ・飛騨市の受け入れ限界を踏まえると、28期は最大何自治体・何名まで対応できるか。フラッグシップ以外の「飛騨プログラム以外の選択肢」を設計する必要はあるか。
+            </blockquote>
+            <blockquote>
+              <strong>論点③：まいぷれのご当地ギフトの位置づけ</strong><br>
+              27期末の判断結果（継続/ピボット/撤退）を踏まえ、28期の計画にどう織り込むか。
+            </blockquote>
+            <blockquote>
+              <strong>論点④：2本柱の売上内訳の配分</strong><br>
+              合計160,000千円をどう2本柱に割り振るか。目標の積み上げ根拠をどう作るか。
+            </blockquote>
+            <blockquote>
+              <strong>論点⑤：まちスパチャの位置づけ</strong><br>
+              27期未達見込みを踏まえ、28期におけるまちスパチャを継続・再設計・縮小のどの位置づけで扱うか。
+            </blockquote>
+            <blockquote>
+              <strong>論点⑥：体制</strong><br>
+              2本柱と中核プロダクトを進める上で、誰がどこを主担当とし、どの領域を兼務・外部連携で補う体制にするか。
+            </blockquote>
+          </div>
+        </section>
+
+        <section id="appendix">
+          <span class="section-kicker">Appendix</span>
+          <div class="section-title">
+            <h2>付記：月次アクションイメージ（叩き台）</h2>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>月</th>
+                <th>重点アクション</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>9月（28期キック）</td>
+                <td>28期計画確定・全員共有。2本柱の担当・目標配分を決定</td>
+              </tr>
+              <tr>
+                <td>10〜11月</td>
+                <td>ふるさと住民登録制度対応パッケージの商品化完了。モデル事業自治体27箇所へのアプローチ開始</td>
+              </tr>
+              <tr>
+                <td>12〜1月</td>
+                <td>チイキャン28期枠の自治体営業。協力隊募集案件のNativ.media連携を強化</td>
+              </tr>
+              <tr>
+                <td>2〜3月</td>
+                <td>BtoB産学官連携の1Q成果検証。1Q終了時点でのKPI達成状況を確認し手を打つ</td>
+              </tr>
+              <tr>
+                <td>4〜6月</td>
+                <td>産学官連携の横展開加速。関係人口戦略セミナー継続（年2〜3回ペース）</td>
+              </tr>
+              <tr>
+                <td>7〜8月</td>
+                <td>期末着地の確認。29期計画の素案作成に着手</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <div class="footer">
+      <p>
+        本ページは原稿 <code>28期計画_draft.md</code> の内容を保持したまま、閲覧性向上のために HTML 化したものです。
+        数値未確定箇所の <code>XX</code>、論点、仮説、注記もそのまま残しています。
+      </p>
+    </div>
+  </div>
+</body>
+</html>
